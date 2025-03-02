@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қыйсыбай Ілияс - Киберпанк Өмірбаяны</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: #0f0;
+            text-align: center;
+        }
+        header {
+            background: #222;
+            color: #0f0;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            border-bottom: 2px solid #0f0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #0f0;
+            border-radius: 10px;
+            width: 80%;
+            transition: 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        section:hover {
+            background: rgba(0, 255, 0, 0.2);
+            transform: scale(1.05);
+        }
+        .hidden-text {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-top: 10px;
+            background: #0f0;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #0a0;
+            background-color: lime;
+        }
+        h5, h4 {
+            display: inline;
+            font-size: inherit;
+            font-weight: bold;
+            margin: 0;
+        }
+        #achievements-content {
+            display: none;
+            gap: 30px;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        #achievementImage {
+            width: 150px;
+            border: 2px solid #0f0;
+            flex-shrink: 0;
+        }
+        
+        #achievements-text {
+            text-align: left;
+            line-height: 1.6;
+        }
+        .visible-text {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .hidden-text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 15px;
+        }
+        .hidden-text.active {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        🤖 Қыйсыбай Ілияс 🤖
+        <a href="https://www.instagram.com/iliaskyisybay/" target="_blank">
+            <img src="insta2.png" alt="Instagram" class="instagram-logo">
+        </a>
+        <style>
+            .instagram-logo {
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>🔧 Мен туралы</h2>
+            <div class="visible-text">
+                Мен, <h5>Қыйсыбай Ілияс Дәуренұлы</h5>,
+            </div>
+            <div class="hidden-text">  
+                2008 жылдың 12 қыркүйегінде Алматы қаласында дүниеге келдім. Менің туған жерім – <h4>Ұзынағаш</h4>. Бұл – кең жайлауы көз тартатын, табиғаты әсем, тарихы терең, қойнауы сырға толы мекен. Мұнда таулардың самалы мен жусанды даланың иісі әрбір жанға ерекше шабыт береді.  <br>
+
+                Балалық шағым 2008-2014 жылдар аралығында <h5>балабақшада</h5> өтті. Бұл – қиялға ерік беріп, дүниені танып-білген, ойыма қанат бітірген шақ. <br>  
+
+                2015 жылы біз <h5>Шамалған</h5> ауылына қоныс аудардық. Дәл осы жерде мен алғаш рет мектеп табалдырығын аттап, білім әлеміне сапарымды бастадым. Шамалған – өзінің тарихымен ерекшеленетін, дамуға ұмтылған ауыл. Осында мен жаңа достар тауып, өзімнің қызығушылықтарымды жетілдіре бастадым.  <br>
+
+                📚 <h4>2022 жылы</h4> мен <h5>7-сыныпта</h5> оқып жүргенде <h4>Республикалық физика-математика мектебіне (РФММ)</h4> түсіп, бүгінде сол жерде білім алып келемін. Бұл мектеп – терең білім мен үздік ойлау қабілетін қалыптастыратын, болашақ ғалымдар мен инженерлердің ордасы. Мұнда мен тек білім алып қана қоймай, жаңа мүмкіндіктерге жол аштым. 🚀
+            </div>
+            <button class="btn" onclick="toggleText(this)">Толығырақ...</button>
+        </section>
+
+        <script>
+            function toggleText(button) {
+                let hiddenText = button.previousElementSibling;
+                if (hiddenText.style.display === "none" || hiddenText.style.display === "") {
+                    hiddenText.style.display = "inline";
+                    button.textContent = "Жасыру";
+                } else {
+                    hiddenText.style.display = "none";
+                    button.textContent = "Толығырақ...";
+                }
+            }
+        </script>
+
+
+
+         <section id="achievements-section">
+            <h2>🏆 Жетістіктер</h2>
+            <div id="achievements-content">
+                <img id="achievementImage" src="for_dz.png" alt="Жетістіктер">
+                <div id="achievements-text">
+                    💻 Информатика пәні бойынша жүлдегер<br>
+                    🥉 Алматы облысы – 3 орын<br>
+                    🏅 ВКОШ финалист (командалық олимпиада)<br>
+                    🎯 AITU ICode финалист<br>
+                    🏆 Мектеп бойынша қола жүлдегер<br><br>
+                    Және де болашақта өз жетістіктерімді көбейтуге үміттенемін! 💪
+                </div>
+            </div>
+            <button class="btn" id="toggle-btn" onclick="toggleAchievements()">Толығырақ...</button>
+            <script>
+                function toggleAchievements() {
+                    const content = document.getElementById("achievements-content");
+                    const btn = document.getElementById("toggle-btn");
+                    
+                    if (content.style.display === "flex" || content.style.display === "") {
+                        content.style.display = "none";
+                        btn.textContent = "Толығырақ...";
+                    } else {
+                        content.style.display = "flex";
+                        btn.textContent = "Жасыру";
+                    }
+                }
+            </script>
+        </section>
+        <section>
+            <h2>🛠️ Болжалды Болашақ</h2>
+            <span>Менің мақсаттарым... <br></span>
+            <span class="hidden-text">
+                ✅ Шетелдік университеттерге грант ұтып алу үшін SAT, IELTS сияқты емтихандарға дайындалу. <br>
+
+                ✅ Киберқауіпсіздік саласында тәжірибе жинау – CTF жарыстарына қатысып, Bug Bounty-ден алғашқы табысымды табу. <br>
+
+                ✅ Өзімнің жеке IT-жобамды жасау, оны дамытып, адамдарға пайдалы өнімге айналдыру. <br>
+
+                Бұл мақсаттар менің болашағыма үлкен қадам болады! 🚀 <br>
+            </span>
+            <button class="btn" onclick="toggleText(this)">Толығырақ...</button>
+        </section>
+        <section>
+            <h2>⚡ Қалдырғым келетін ізім</h2>
+            <span>Хммм...<br></span>
+            <span class="hidden-text"> 
+                Мен адамдардың цифрлық қауіпсіздігін қамтамасыз ету үшін киберқауіпсіздік саласында жұмыс істеп, қоғамға пайдалы технологиялар жасағым келеді. <br>
+                Егер менің еңбегім интернет кеңістігін қауіпсіз етсе, бұл менің тарихтағы ізім болмақ 🚀
+            </span>
+            <button class="btn" onclick="toggleText(this)">Толығырақ...</button>
+        </section>
+    </div>
+</body>
+</html>
